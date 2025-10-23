@@ -1,32 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Teste</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios de JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f0f4f8;
+      color: #333;
+    }
+    h2 {
+      color: #0056b3;
+    }
+    input, button {
+      padding: 8px;
+      margin: 4px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #0078d7;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    .exercicio {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Página de frente</h1>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <h1>Exercícios JavaScript - HTML + CSS + JS</h1>
 
-    <main class="conteudo">
-        <div class="texto">
-            <h2>Bem-vindo!</h2>
-            <p>3° Bimestre de Lógica e Programação. Bem-vindo professor Adislan!</p>
-        </div>
-    </main>
+  <!-- EXERCÍCIO 1 -->
+  <div class="exercicio">
+    <h2>Exercício 1 - Somar dois números fixos e mostrar no alert</h2>
+    <button onclick="exercicio1()">Executar</button>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 - Todos os direitos reservados | Contato: exemplo@email.com</p>
-    </footer>
+  <!-- EXERCÍCIO 2 -->
+  <div class="exercicio">
+    <h2>Exercício 2 - Somar números digitados pelo usuário e mostrar no console</h2>
+    <button onclick="exercicio2()">Executar</button>
+  </div>
+
+  <!-- EXERCÍCIO 3 -->
+  <div class="exercicio">
+    <h2>Exercício 3 - Somar números coletados de inputs e mostrar no alert</h2>
+    <input type="number" id="num1_ex3" placeholder="Número 1">
+    <input type="number" id="num2_ex3" placeholder="Número 2">
+    <button onclick="exercicio3()">Somar</button>
+  </div>
+
+  <!-- EXERCÍCIO 4 -->
+  <div class="exercicio">
+    <h2>Exercício 4 - Mostrar resultado no parágrafo (innerHTML)</h2>
+    <input type="number" id="num1_ex4" placeholder="Número 1">
+    <input type="number" id="num2_ex4" placeholder="Número 2">
+    <button onclick="exercicio4()">Calcular</button>
+    <p id="resultado4"></p>
+  </div>
+
+  <!-- EXERCÍCIO 5 -->
+  <div class="exercicio">
+    <h2>Exercício 5 - Função separada chamada no botão (alert)</h2>
+    <input type="number" id="num1_ex5" placeholder="Número 1">
+    <input type="number" id="num2_ex5" placeholder="Número 2">
+    <button onclick="calcularEx5()">Calcular</button>
+  </div>
+
+  <script>
+    // EXERCÍCIO 1
+    function exercicio1() {
+      let a = 10;
+      let b = 20;
+      let soma = a + b;
+      alert("A soma é: " + soma);
+    }
+
+    // EXERCÍCIO 2
+    function exercicio2() {
+      let n1 = Number(prompt("Digite o primeiro número:"));
+      let n2 = Number(prompt("Digite o segundo número:"));
+      let soma = n1 + n2;
+      console.log("A soma é: " + soma);
+    }
+
+    // EXERCÍCIO 3
+    function exercicio3() {
+      let n1 = Number(document.getElementById("num1_ex3").value);
+      let n2 = Number(document.getElementById("num2_ex3").value);
+      let soma = n1 + n2;
+      alert("A soma é: " + soma);
+    }
+
+    // EXERCÍCIO 4
+    function exercicio4() {
+      let n1 = Number(document.getElementById("num1_ex4").value);
+      let n2 = Number(document.getElementById("num2_ex4").value);
+      let soma = n1 + n2;
+      document.getElementById("resultado4").innerHTML = "Resultado: " + soma;
+    }
+
+    // EXERCÍCIO 5
+    function calcularEx5() {
+      somarNumeros();
+    }
+
+    function somarNumeros() {
+      let n1 = Number(document.getElementById("num1_ex5").value);
+      let n2 = Number(document.getElementById("num2_ex5").value);
+      let soma = n1 + n2;
+      alert("Resultado da soma: " + soma);
+    }
+  </script>
 </body>
 </html>
